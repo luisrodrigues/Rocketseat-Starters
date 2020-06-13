@@ -1,33 +1,65 @@
 <html>
-    <head>
-        <title>JS</title>
-    </head>
-    <body>
-        <div id="app">
-            <button onclick="showAlert()">Click Me</button>
-            <button onmouseover="showAlert()">Hover Me</button>
-            <input onkeypress="showAlert()" />
+  <head>
+    <title>JS - Challenge 2</title>
+  </head>
+  <body>
+    <div id="app">
+      <button class="eg1">Eg. 1</button>
+      <input type="text" name="name"/>
+      <button class="add">Add</button>
+    </div>
+    <script>
+      //ex 1
+      var containerElement = document.querySelector("#app");
+      var btnElement = document.querySelector("button.eg1");
 
-            <input type="text" name="nome" id="nome" />
-            <button class="botao">Adicionar</button>
-        </div>
-        <script>
+      btnElement.onclick = function () {
+        var boxElement = document.createElement("div");
+        boxElement.style.width = "100px";
+        boxElement.style.height = "100px";
+        boxElement.style.backgroundColor = "red";
+        boxElement.onclick = function() {
+            boxElement.style.backgroundColor = getRandomColor();
+        };
+        containerElement.appendChild(boxElement);
+      };
 
-            function showAlert() {
-                alert('Clicked!');
-            }
+      // ex 2
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+      var newColor = getRandomColor(); // #E943F0
 
-            var inputElement = document.querySelector('input[name=nome]');
-            // ou document.getElementById('nome');  
-            // ou document.getElementsByTagName('input')[1]
-            // ou document.getElementsByClassName('nome')[0]
-            
-            var btnElement = document.querySelector('button.botao');
-            
-            btnElement.onclick = function () {
-                alert(inputElement.value);
-            }
+      // ex 3
+      var nomes = ['Diego', 'Gabriel', 'Lucas']
 
-        </script>
-    </body>
+      var listElement = document.createElement('ul');
+
+      for (let i = 0; i < nomes.length; i++) {
+          var text = document.createTextNode(nomes[i]);
+          var itemElement = document.createElement('li');
+          itemElement.appendChild(text);
+          listElement.appendChild(itemElement);          
+      }
+
+      containerElement.appendChild(listElement);
+
+      // ex 4
+      var addBtnElement = document.querySelector("button.add");
+      var nameInputElement = document.querySelector("input[name='name']");
+
+      addBtnElement.onclick = function () {
+          var text = document.createTextNode(nameInputElement.value);
+          var item = document.createElement('li');
+          item.appendChild(text);
+          listElement.append(item);
+      }
+
+    </script>
+  </body>
 </html>
