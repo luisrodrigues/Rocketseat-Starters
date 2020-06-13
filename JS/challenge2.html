@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>JS</title>
+    </head>
+    <body>
+        <div id="app">
+            <button onclick="showAlert()">Click Me</button>
+            <button onmouseover="showAlert()">Hover Me</button>
+            <input onkeypress="showAlert()" />
+
+            <input type="text" name="nome" id="nome" />
+            <button class="botao">Adicionar</button>
+        </div>
+        <script>
+
+            function showAlert() {
+                alert('Clicked!');
+            }
+
+            var inputElement = document.querySelector('input[name=nome]');
+            // ou document.getElementById('nome');  
+            // ou document.getElementsByTagName('input')[1]
+            // ou document.getElementsByClassName('nome')[0]
+            
+            var btnElement = document.querySelector('button.botao');
+            
+            btnElement.onclick = function () {
+                alert(inputElement.value);
+            }
+
+        </script>
+    </body>
+</html>
