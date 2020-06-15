@@ -1,6 +1,6 @@
 alert('Test');
 
-class Teste {
+class TestClass {
     method() {
 
     }

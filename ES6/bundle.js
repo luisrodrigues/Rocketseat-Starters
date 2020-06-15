@@ -8,12 +8,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 alert('Test');
 
-var Teste = /*#__PURE__*/function () {
-  function Teste() {
-    _classCallCheck(this, Teste);
+var TestClass = /*#__PURE__*/function () {
+  function TestClass() {
+    _classCallCheck(this, TestClass);
   }
 
-  _createClass(Teste, [{
+  _createClass(TestClass, [{
     key: "method",
     value: function method() {}
   }, {
@@ -21,5 +21,5 @@ var Teste = /*#__PURE__*/function () {
     value: function otherMethod() {}
   }]);
 
-  return Teste;
+  return TestClass;
 }();
