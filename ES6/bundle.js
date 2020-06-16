@@ -106,4 +106,24 @@ var sumTest = function sumTest() {
 };
 
 console.log(sumTest());
-console.log(sumTest(1));
+console.log(sumTest(1)); // destructuring
+
+var user = {
+  name: "Luis",
+  age: 24,
+  address: {
+    country: "Portugal",
+    city: "Porto"
+  }
+};
+var name = user.name,
+    age = user.age,
+    country = user.address.country;
+console.log(name, age, country);
+
+function showCity(_ref) {
+  var city = _ref.address.city;
+  console.log(city);
+}
+
+showCity(user); // rest / spread operators

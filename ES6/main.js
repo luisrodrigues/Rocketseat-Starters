@@ -99,3 +99,26 @@ console.log(test());
 const sumTest = (a = 3, b = 6) => a + b;
 console.log(sumTest());
 console.log(sumTest(1));
+
+// destructuring
+const user = {
+  name: "Luis",
+  age: 24,
+  address: {
+    country: "Portugal",
+    city: "Porto",
+  },
+};
+const {
+  name,
+  age,
+  address: { country },
+} = user;
+console.log(name, age, country);
+
+function showCity({ address: { city } }) {
+  console.log(city);
+}
+showCity(user);
+
+// rest / spread operators
