@@ -32,18 +32,34 @@ document.getElementById('newTodo').onclick = function() {
 }
 
 myTodoList.showUser();
-*/
 
+// static method example
 class Maths {
-    // static mehods: can't be called in class intances
-    // mostly used for util methods
-    static sum(a, b) {
-        return a + b;
-    }
+  // static mehods: can't be called in class intances
+  // mostly used for util methods
+  static sum(a, b) {
+    return a + b;
+  }
 }
 
 console.log(Maths.sum(1, 2));
 
+// const - identifier can't be reassigned | let - scoped variable
+const user = { name: "Luis" };
+console.log(user);
+user.name = "Pedro";
+console.log(user);
 
+function test(x) {
+  let y = 2;
 
+  if (x > 5) {
+    let y = 4;
+    console.log(x, y); // logs: y = 4
+  }
+}
+// console.log(y); would not work here
+test(10);
+*/
 
+// Array Operations
