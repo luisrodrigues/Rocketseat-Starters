@@ -169,3 +169,126 @@ const employee = {
 console.log(employee);
 */
 //Challenge
+// 1
+class User {
+  constructor(email, pass) {
+    this.email = email;
+    this.pass = pass;
+    this.admin = false;
+  }
+
+  isAdmin() {
+    return this.admin;
+  }
+}
+
+class Admin extends User {
+  constructor() {
+    super();
+    this.admin = true;
+  }
+}
+
+const user = new User("usermail", "pass1");
+const admin = new Admin("adminmail", "pass2");
+console.log(user.isAdmin());
+console.log(admin.isAdmin());
+
+// 2
+const users = [
+  { name: "Diego", age: 23, company: "Rocketseat" },
+  { name: "Gabriel", age: 15, empresa: "Rocketseat" },
+  { name: "Lucas", age: 30, company: "Facebook" },
+  { name: "Luis", age: 24, company: "Google" },
+];
+// 2.1
+const ages = users.map((user) => user.age);
+console.log(ages);
+// 2.2
+const filteredUsers = users.filter(
+  (user) => user.age > 18 && user.company === "Rocketseat"
+);
+console.log(filteredUsers);
+// 2.3
+const googlers = users.find((user) => user.company === "Google");
+console.log(googlers);
+// 2.4
+const belowFifty = users.filter((item) => item.age * 2 <= 50);
+console.log(belowFifty);
+
+// 3
+// 3.1
+const arr = [1, 2, 3, 4, 5];
+arr.map((item) => item + 10);
+console.log(arr);
+// 3.2
+const user2 = { name: "Diego", age: 23 };
+const showAge = (user) => user.age;
+console.log(showAge(user2));
+// 3.3
+const name = "Diego";
+const age = 23;
+const showUser = (name = "Diego", age = 18) => ({
+  //important
+  name,
+  age,
+});
+console.log(showUser(name, age));
+console.log(showUser(name));
+// 3.4
+const promise = () => new Promise((resolve, reject) => resolve());
+
+// 4
+// 4.1
+const company = {
+  companyName: "Rocketseat",
+  address: { city: "Rio do Sul", state: "SC" },
+};
+const {
+  companyName,
+  address: { city, state },
+} = company;
+console.log(companyName);
+console.log(city);
+console.log(state);
+// 4.2
+function showInfo(...user) {
+  return `${name} tem ${age} anos.`;
+}
+console.log(showInfo({ name: "Diego", age: 23 }));
+
+// 5
+// 5.1 - 1
+const arrFive = [1, 2, 3, 4, 5, 6];
+const [x, ...y] = arrFive;
+console.log(x);
+console.log(y);
+// 5.1 - 2
+const sumRest = (...arr) => arr.reduce((total, next) => total + next);
+console.log(sumRest(1, 2, 3));
+console.log(sumRest(1, 1, 2, 3, 4, 5));
+// 5.2
+const userSpread = {
+  name: "Diego",
+  age: 23,
+  address: { city: "Rio do Sul", state: "SC", country: "Brasil" },
+};
+
+const userSpread2 = { ...userSpread, name: "Gabriel" }; // order matters
+const userSpread3 = {
+  ...userSpread,
+  address: { ...userSpread.address, city: "Lontras" }, // important
+};
+console.log(userSpread2);
+console.log(userSpread3);
+
+// 6
+const userTL = "Diego";
+const ageTL = 23;
+console.log(`O usuário ${userTL} possui ${ageTL} anos`);
+
+// 7
+const nameO = "Diego";
+const ageO = 23;
+const userO = { nameO, ageO, city: "Rio do Sul" };
+console.log(userO);
