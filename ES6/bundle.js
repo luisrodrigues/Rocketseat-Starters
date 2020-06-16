@@ -1,5 +1,3 @@
-"use strict";
-
 // es6 - classes
 
 /*
@@ -62,68 +60,100 @@ function test(x) {
 }
 // console.log(y); would not work here
 test(10);
-*/
+
 // Array Operations
-var arr = [1, 3, 4, 5, 9, 2]; // map
+const arr = [1, 3, 4, 5, 9, 2];
+
+// map
 //const newArr = arr.map(function name(item) {
 //  return item * 2;
 //});
 //console.log(newArr);
-// reduce
 
-var sum = arr.reduce(function name(total, next) {
+// reduce
+const sum = arr.reduce(function name(total, next) {
   return total + next;
 });
-console.log(sum); // filter
+console.log(sum);
 
-var filterArr = arr.filter(function name(item) {
+// filter
+const filterArr = arr.filter(function name(item) {
   return item % 2 === 0;
 });
-console.log(filterArr); // find
+console.log(filterArr);
 
-var findArr = arr.find(function name(item) {
+// find
+const findArr = arr.find(function name(item) {
   return item === 4; // returns undefined if not found
 });
-console.log(findArr); // Arrow Functions - anonym
+console.log(findArr);
 
-var newArr = arr.map(function (item) {
-  return item * 2;
-});
+// Arrow Functions - anonym
+const newArr = arr.map((item) => item * 2);
 console.log(newArr);
 
-var test = function test() {
-  return {
-    name: "Luis"
-  };
-};
+const test = () => ({ name: "Luis" });
+console.log(test());
 
-console.log(test()); // default function values
-
-var sumTest = function sumTest() {
-  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
-  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
-  return a + b;
-};
-
+// default function values
+const sumTest = (a = 3, b = 6) => a + b;
 console.log(sumTest());
-console.log(sumTest(1)); // destructuring
+console.log(sumTest(1));
 
-var user = {
+// destructuring
+const user = {
   name: "Luis",
   age: 24,
   address: {
     country: "Portugal",
-    city: "Porto"
-  }
+    city: "Porto",
+  },
 };
-var name = user.name,
-    age = user.age,
-    country = user.address.country;
+const {
+  name,
+  age,
+  address: { country },
+} = user;
 console.log(name, age, country);
 
-function showCity(_ref) {
-  var city = _ref.address.city;
+function showCity({ address: { city } }) {
   console.log(city);
 }
+showCity(user);
 
-showCity(user); // rest / spread operators
+// rest / spread operators
+const user = {
+  name: "Luis",
+  age: 24,
+  company: "Luis S.A.",
+};
+// rest
+const { name, ...stuff } = user;
+console.log(name);
+console.log(stuff);
+
+const arr = [1, 2, 3, 4];
+const [a, ...b] = arr;
+console.log(a);
+console.log(b);
+
+function add(a, b, c, d) {
+  return a + b + c + d;
+}
+function addTwo(...params) {
+  return params.reduce((total, next) => total + next);
+}
+console.log(add(1, 2, 3, 1));
+console.log(addTwo(1, 2, 3, 1));
+
+// spread
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const arr3 = [...arr1, ...arr2];
+console.log(arr3);
+
+const user2 = { ...user, company: "ANA" };
+console.log(user2);
+*/
+// template literals
+"use strict";

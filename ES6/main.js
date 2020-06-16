@@ -60,7 +60,7 @@ function test(x) {
 }
 // console.log(y); would not work here
 test(10);
-*/
+
 // Array Operations
 const arr = [1, 3, 4, 5, 9, 2];
 
@@ -122,3 +122,37 @@ function showCity({ address: { city } }) {
 showCity(user);
 
 // rest / spread operators
+const user = {
+  name: "Luis",
+  age: 24,
+  company: "Luis S.A.",
+};
+// rest
+const { name, ...stuff } = user;
+console.log(name);
+console.log(stuff);
+
+const arr = [1, 2, 3, 4];
+const [a, ...b] = arr;
+console.log(a);
+console.log(b);
+
+function add(a, b, c, d) {
+  return a + b + c + d;
+}
+function addTwo(...params) {
+  return params.reduce((total, next) => total + next);
+}
+console.log(add(1, 2, 3, 1));
+console.log(addTwo(1, 2, 3, 1));
+
+// spread
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const arr3 = [...arr1, ...arr2];
+console.log(arr3);
+
+const user2 = { ...user, company: "ANA" };
+console.log(user2);
+*/
+// template literals
