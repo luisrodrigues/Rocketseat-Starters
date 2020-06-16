@@ -126,9 +126,10 @@ const user = {
   name: "Luis",
   age: 24,
   company: "Luis S.A.",
+  club: "FCP",
 };
 // rest
-const { name, ...stuff } = user;
+const { name, age, ...stuff } = user;
 console.log(name);
 console.log(stuff);
 
@@ -154,6 +155,18 @@ console.log(arr3);
 
 const user2 = { ...user, company: "ANA" };
 console.log(user2);
-*/
+
 // template literals
+console.log(`My name is ${name} and I am ${age} years old`);
+// object short syntax
+const employeeName = "L";
+const employeeAge = 24;
+const employee = {
+  employeeName,
+  employeeAge,
+  employeeCompany: "VSCode",
+};
+console.log(employee);
+*/
+//Challenge
 "use strict";
