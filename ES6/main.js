@@ -94,3 +94,8 @@ console.log(newArr);
 
 const test = () => ({ name: "Luis" });
 console.log(test());
+
+// default function values
+const sumTest = (a = 3, b = 6) => a + b;
+console.log(sumTest());
+console.log(sumTest(1));

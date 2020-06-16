@@ -97,4 +97,13 @@ var test = function test() {
   };
 };
 
-console.log(test());
+console.log(test()); // default function values
+
+var sumTest = function sumTest() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
+  return a + b;
+};
+
+console.log(sumTest());
+console.log(sumTest(1));
