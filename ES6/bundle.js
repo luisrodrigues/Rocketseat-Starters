@@ -1,3 +1,5 @@
+"use strict";
+
 // es6 - classes
 
 /*
@@ -60,33 +62,39 @@ function test(x) {
 }
 // console.log(y); would not work here
 test(10);
-
+*/
 // Array Operations
-const arr = [1, 3, 4, 5, 9, 2];
+var arr = [1, 3, 4, 5, 9, 2]; // map
+//const newArr = arr.map(function name(item) {
+//  return item * 2;
+//});
+//console.log(newArr);
+// reduce
 
-// map
-const newArr = arr.map(function name(item) {
+var sum = arr.reduce(function name(total, next) {
+  return total + next;
+});
+console.log(sum); // filter
+
+var filterArr = arr.filter(function name(item) {
+  return item % 2 === 0;
+});
+console.log(filterArr); // find
+
+var findArr = arr.find(function name(item) {
+  return item === 4; // returns undefined if not found
+});
+console.log(findArr); // Arrow Functions - anonym
+
+var newArr = arr.map(function (item) {
   return item * 2;
 });
 console.log(newArr);
 
-// reduce
-const sum = arr.reduce(function name(total, next) {
-  return total + next;
-});
-console.log(sum);
+var test = function test() {
+  return {
+    name: "Luis"
+  };
+};
 
-// filter
-const filterArr = arr.filter(function name(item) {
-  return item % 2 === 0;
-});
-console.log(filterArr);
-
-// find
-const findArr = arr.find(function name(item) {
-  return item === 4; // returns undefined if not found
-});
-console.log(findArr);
-*/
-// Arrow Functions
-"use strict";
+console.log(test());

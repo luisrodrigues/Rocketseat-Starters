@@ -60,15 +60,15 @@ function test(x) {
 }
 // console.log(y); would not work here
 test(10);
-
+*/
 // Array Operations
 const arr = [1, 3, 4, 5, 9, 2];
 
 // map
-const newArr = arr.map(function name(item) {
-  return item * 2;
-});
-console.log(newArr);
+//const newArr = arr.map(function name(item) {
+//  return item * 2;
+//});
+//console.log(newArr);
 
 // reduce
 const sum = arr.reduce(function name(total, next) {
@@ -87,6 +87,10 @@ const findArr = arr.find(function name(item) {
   return item === 4; // returns undefined if not found
 });
 console.log(findArr);
-*/
 
-// Arrow Functions
+// Arrow Functions - anonym
+const newArr = arr.map((item) => item * 2);
+console.log(newArr);
+
+const test = () => ({ name: "Luis" });
+console.log(test());
