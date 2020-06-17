@@ -11,7 +11,7 @@ export function sub(a, b) {
 export function mult(a, b) {
   return a * b;
 }
-*/
+
 
 // challenge
 export const age = 23;
@@ -21,3 +21,4 @@ export default class User {
     console.log("test");
   }
 }
+*/
