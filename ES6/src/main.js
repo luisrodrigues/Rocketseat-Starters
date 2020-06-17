@@ -10,7 +10,7 @@ import User, { age as userAge } from "./functions";
 
 User.info();
 console.log(userAge);
-*/
+
 // Async/await
 const myPromise = () =>
   new Promise((resolve, reject) =>
@@ -30,3 +30,23 @@ const executePromise = async () => {
 // easier than cascade
 executePromise();
 // above is also a promise
+*/
+// Axios
+import axios from "axios";
+
+class Api {
+  static async getUserInfo(username) {
+    try {
+      const response = await axios.get(
+        `https://api.github.com/users/${username}`
+      );
+      console.log(response);
+    } catch (err) {
+      console.warn(err);
+    }
+  }
+}
+// 200
+Api.getUserInfo("luisrodrigues");
+// 404
+Api.getUserInfo("luisrodriguesssss");
