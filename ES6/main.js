@@ -167,7 +167,7 @@ const employee = {
   employeeCompany: "VSCode",
 };
 console.log(employee);
-*/
+
 //Challenge
 // 1
 class User {
@@ -292,3 +292,8 @@ const nameO = "Diego";
 const ageO = 23;
 const userO = { nameO, ageO, city: "Rio do Sul" };
 console.log(userO);
+*/
+// Webpack
+import { add } from "./functions";
+
+console.log(add(1, 7));

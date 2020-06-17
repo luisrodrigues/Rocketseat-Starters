@@ -1,405 +1,113 @@
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./main.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./functions.js":
+/*!**********************!*\
+  !*** ./functions.js ***!
+  \**********************/
+/*! exports provided: add */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"add\", function() { return add; });\nfunction add(a, b) {\n  return a + b;\n}\n\n//# sourceURL=webpack:///./functions.js?");
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+/***/ }),
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+/***/ "./main.js":
+/*!*****************!*\
+  !*** ./main.js ***!
+  \*****************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions */ \"./functions.js\");\n// es6 - classes\n\n/*\r\nclass List {\r\n    constructor() {\r\n        this.data = [];\r\n    }\r\n\r\n    add(data) {\r\n        this.data.push(data);\r\n        console.log(this.data);\r\n    }\r\n}\r\n\r\n//inheritance\r\nclass TodoList extends List {\r\n    constructor() {\r\n        super();\r\n\r\n        this.user = 'Luis';\r\n    }\r\n\r\n    showUser() {\r\n        console.log(this.user);\r\n    }\r\n}\r\n\r\nvar myTodoList = new TodoList();\r\n\r\ndocument.getElementById('newTodo').onclick = function() {\r\n    myTodoList.add('new todo');\r\n}\r\n\r\nmyTodoList.showUser();\r\n\r\n// static method example\r\nclass Maths {\r\n  // static mehods: can't be called in class intances\r\n  // mostly used for util methods\r\n  static sum(a, b) {\r\n    return a + b;\r\n  }\r\n}\r\n\r\nconsole.log(Maths.sum(1, 2));\r\n\r\n// const - identifier can't be reassigned | let - scoped variable\r\nconst user = { name: \"Luis\" };\r\nconsole.log(user);\r\nuser.name = \"Pedro\";\r\nconsole.log(user);\r\n\r\nfunction test(x) {\r\n  let y = 2;\r\n\r\n  if (x > 5) {\r\n    let y = 4;\r\n    console.log(x, y); // logs: y = 4\r\n  }\r\n}\r\n// console.log(y); would not work here\r\ntest(10);\r\n\r\n// Array Operations\r\nconst arr = [1, 3, 4, 5, 9, 2];\r\n\r\n// map\r\n//const newArr = arr.map(function name(item) {\r\n//  return item * 2;\r\n//});\r\n//console.log(newArr);\r\n\r\n// reduce\r\nconst sum = arr.reduce(function name(total, next) {\r\n  return total + next;\r\n});\r\nconsole.log(sum);\r\n\r\n// filter\r\nconst filterArr = arr.filter(function name(item) {\r\n  return item % 2 === 0;\r\n});\r\nconsole.log(filterArr);\r\n\r\n// find\r\nconst findArr = arr.find(function name(item) {\r\n  return item === 4; // returns undefined if not found\r\n});\r\nconsole.log(findArr);\r\n\r\n// Arrow Functions - anonym\r\nconst newArr = arr.map((item) => item * 2);\r\nconsole.log(newArr);\r\n\r\nconst test = () => ({ name: \"Luis\" });\r\nconsole.log(test());\r\n\r\n// default function values\r\nconst sumTest = (a = 3, b = 6) => a + b;\r\nconsole.log(sumTest());\r\nconsole.log(sumTest(1));\r\n\r\n// destructuring\r\nconst user = {\r\n  name: \"Luis\",\r\n  age: 24,\r\n  address: {\r\n    country: \"Portugal\",\r\n    city: \"Porto\",\r\n  },\r\n};\r\nconst {\r\n  name,\r\n  age,\r\n  address: { country },\r\n} = user;\r\nconsole.log(name, age, country);\r\n\r\nfunction showCity({ address: { city } }) {\r\n  console.log(city);\r\n}\r\nshowCity(user);\r\n\r\n// rest / spread operators\r\nconst user = {\r\n  name: \"Luis\",\r\n  age: 24,\r\n  company: \"Luis S.A.\",\r\n  club: \"FCP\",\r\n};\r\n// rest\r\nconst { name, age, ...stuff } = user;\r\nconsole.log(name);\r\nconsole.log(stuff);\r\n\r\nconst arr = [1, 2, 3, 4];\r\nconst [a, ...b] = arr;\r\nconsole.log(a);\r\nconsole.log(b);\r\n\r\nfunction add(a, b, c, d) {\r\n  return a + b + c + d;\r\n}\r\nfunction addTwo(...params) {\r\n  return params.reduce((total, next) => total + next);\r\n}\r\nconsole.log(add(1, 2, 3, 1));\r\nconsole.log(addTwo(1, 2, 3, 1));\r\n\r\n// spread\r\nconst arr1 = [1, 2, 3];\r\nconst arr2 = [4, 5, 6];\r\nconst arr3 = [...arr1, ...arr2];\r\nconsole.log(arr3);\r\n\r\nconst user2 = { ...user, company: \"ANA\" };\r\nconsole.log(user2);\r\n\r\n// template literals\r\nconsole.log(`My name is ${name} and I am ${age} years old`);\r\n// object short syntax\r\nconst employeeName = \"L\";\r\nconst employeeAge = 24;\r\nconst employee = {\r\n  employeeName,\r\n  employeeAge,\r\n  employeeCompany: \"VSCode\",\r\n};\r\nconsole.log(employee);\r\n\r\n//Challenge\r\n// 1\r\nclass User {\r\n  constructor(email, pass) {\r\n    this.email = email;\r\n    this.pass = pass;\r\n    this.admin = false;\r\n  }\r\n\r\n  isAdmin() {\r\n    return this.admin;\r\n  }\r\n}\r\n\r\nclass Admin extends User {\r\n  constructor() {\r\n    super();\r\n    this.admin = true;\r\n  }\r\n}\r\n\r\nconst user = new User(\"usermail\", \"pass1\");\r\nconst admin = new Admin(\"adminmail\", \"pass2\");\r\nconsole.log(user.isAdmin());\r\nconsole.log(admin.isAdmin());\r\n\r\n// 2\r\nconst users = [\r\n  { name: \"Diego\", age: 23, company: \"Rocketseat\" },\r\n  { name: \"Gabriel\", age: 15, empresa: \"Rocketseat\" },\r\n  { name: \"Lucas\", age: 30, company: \"Facebook\" },\r\n  { name: \"Luis\", age: 24, company: \"Google\" },\r\n];\r\n// 2.1\r\nconst ages = users.map((user) => user.age);\r\nconsole.log(ages);\r\n// 2.2\r\nconst filteredUsers = users.filter(\r\n  (user) => user.age > 18 && user.company === \"Rocketseat\"\r\n);\r\nconsole.log(filteredUsers);\r\n// 2.3\r\nconst googlers = users.find((user) => user.company === \"Google\");\r\nconsole.log(googlers);\r\n// 2.4\r\nconst belowFifty = users.filter((item) => item.age * 2 <= 50);\r\nconsole.log(belowFifty);\r\n\r\n// 3\r\n// 3.1\r\nconst arr = [1, 2, 3, 4, 5];\r\narr.map((item) => item + 10);\r\nconsole.log(arr);\r\n// 3.2\r\nconst user2 = { name: \"Diego\", age: 23 };\r\nconst showAge = (user) => user.age;\r\nconsole.log(showAge(user2));\r\n// 3.3\r\nconst name = \"Diego\";\r\nconst age = 23;\r\nconst showUser = (name = \"Diego\", age = 18) => ({\r\n  //important\r\n  name,\r\n  age,\r\n});\r\nconsole.log(showUser(name, age));\r\nconsole.log(showUser(name));\r\n// 3.4\r\nconst promise = () => new Promise((resolve, reject) => resolve());\r\n\r\n// 4\r\n// 4.1\r\nconst company = {\r\n  companyName: \"Rocketseat\",\r\n  address: { city: \"Rio do Sul\", state: \"SC\" },\r\n};\r\nconst {\r\n  companyName,\r\n  address: { city, state },\r\n} = company;\r\nconsole.log(companyName);\r\nconsole.log(city);\r\nconsole.log(state);\r\n// 4.2\r\nfunction showInfo(...user) {\r\n  return `${name} tem ${age} anos.`;\r\n}\r\nconsole.log(showInfo({ name: \"Diego\", age: 23 }));\r\n\r\n// 5\r\n// 5.1 - 1\r\nconst arrFive = [1, 2, 3, 4, 5, 6];\r\nconst [x, ...y] = arrFive;\r\nconsole.log(x);\r\nconsole.log(y);\r\n// 5.1 - 2\r\nconst sumRest = (...arr) => arr.reduce((total, next) => total + next);\r\nconsole.log(sumRest(1, 2, 3));\r\nconsole.log(sumRest(1, 1, 2, 3, 4, 5));\r\n// 5.2\r\nconst userSpread = {\r\n  name: \"Diego\",\r\n  age: 23,\r\n  address: { city: \"Rio do Sul\", state: \"SC\", country: \"Brasil\" },\r\n};\r\n\r\nconst userSpread2 = { ...userSpread, name: \"Gabriel\" }; // order matters\r\nconst userSpread3 = {\r\n  ...userSpread,\r\n  address: { ...userSpread.address, city: \"Lontras\" }, // important\r\n};\r\nconsole.log(userSpread2);\r\nconsole.log(userSpread3);\r\n\r\n// 6\r\nconst userTL = \"Diego\";\r\nconst ageTL = 23;\r\nconsole.log(`O usuário ${userTL} possui ${ageTL} anos`);\r\n\r\n// 7\r\nconst nameO = \"Diego\";\r\nconst ageO = 23;\r\nconst userO = { nameO, ageO, city: \"Rio do Sul\" };\r\nconsole.log(userO);\r\n*/\n// Webpack\n\nconsole.log(Object(_functions__WEBPACK_IMPORTED_MODULE_0__[\"add\"])(1, 7));\n\n//# sourceURL=webpack:///./main.js?");
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+/***/ })
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-// es6 - classes
-
-/*
-class List {
-    constructor() {
-        this.data = [];
-    }
-
-    add(data) {
-        this.data.push(data);
-        console.log(this.data);
-    }
-}
-
-//inheritance
-class TodoList extends List {
-    constructor() {
-        super();
-
-        this.user = 'Luis';
-    }
-
-    showUser() {
-        console.log(this.user);
-    }
-}
-
-var myTodoList = new TodoList();
-
-document.getElementById('newTodo').onclick = function() {
-    myTodoList.add('new todo');
-}
-
-myTodoList.showUser();
-
-// static method example
-class Maths {
-  // static mehods: can't be called in class intances
-  // mostly used for util methods
-  static sum(a, b) {
-    return a + b;
-  }
-}
-
-console.log(Maths.sum(1, 2));
-
-// const - identifier can't be reassigned | let - scoped variable
-const user = { name: "Luis" };
-console.log(user);
-user.name = "Pedro";
-console.log(user);
-
-function test(x) {
-  let y = 2;
-
-  if (x > 5) {
-    let y = 4;
-    console.log(x, y); // logs: y = 4
-  }
-}
-// console.log(y); would not work here
-test(10);
-
-// Array Operations
-const arr = [1, 3, 4, 5, 9, 2];
-
-// map
-//const newArr = arr.map(function name(item) {
-//  return item * 2;
-//});
-//console.log(newArr);
-
-// reduce
-const sum = arr.reduce(function name(total, next) {
-  return total + next;
-});
-console.log(sum);
-
-// filter
-const filterArr = arr.filter(function name(item) {
-  return item % 2 === 0;
-});
-console.log(filterArr);
-
-// find
-const findArr = arr.find(function name(item) {
-  return item === 4; // returns undefined if not found
-});
-console.log(findArr);
-
-// Arrow Functions - anonym
-const newArr = arr.map((item) => item * 2);
-console.log(newArr);
-
-const test = () => ({ name: "Luis" });
-console.log(test());
-
-// default function values
-const sumTest = (a = 3, b = 6) => a + b;
-console.log(sumTest());
-console.log(sumTest(1));
-
-// destructuring
-const user = {
-  name: "Luis",
-  age: 24,
-  address: {
-    country: "Portugal",
-    city: "Porto",
-  },
-};
-const {
-  name,
-  age,
-  address: { country },
-} = user;
-console.log(name, age, country);
-
-function showCity({ address: { city } }) {
-  console.log(city);
-}
-showCity(user);
-
-// rest / spread operators
-const user = {
-  name: "Luis",
-  age: 24,
-  company: "Luis S.A.",
-  club: "FCP",
-};
-// rest
-const { name, age, ...stuff } = user;
-console.log(name);
-console.log(stuff);
-
-const arr = [1, 2, 3, 4];
-const [a, ...b] = arr;
-console.log(a);
-console.log(b);
-
-function add(a, b, c, d) {
-  return a + b + c + d;
-}
-function addTwo(...params) {
-  return params.reduce((total, next) => total + next);
-}
-console.log(add(1, 2, 3, 1));
-console.log(addTwo(1, 2, 3, 1));
-
-// spread
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
-const arr3 = [...arr1, ...arr2];
-console.log(arr3);
-
-const user2 = { ...user, company: "ANA" };
-console.log(user2);
-
-// template literals
-console.log(`My name is ${name} and I am ${age} years old`);
-// object short syntax
-const employeeName = "L";
-const employeeAge = 24;
-const employee = {
-  employeeName,
-  employeeAge,
-  employeeCompany: "VSCode",
-};
-console.log(employee);
-*/
-//Challenge
-// 1
-var User = /*#__PURE__*/function () {
-  function User(email, pass) {
-    _classCallCheck(this, User);
-
-    this.email = email;
-    this.pass = pass;
-    this.admin = false;
-  }
-
-  _createClass(User, [{
-    key: "isAdmin",
-    value: function isAdmin() {
-      return this.admin;
-    }
-  }]);
-
-  return User;
-}();
-
-var Admin = /*#__PURE__*/function (_User) {
-  _inherits(Admin, _User);
-
-  var _super = _createSuper(Admin);
-
-  function Admin() {
-    var _this;
-
-    _classCallCheck(this, Admin);
-
-    _this = _super.call(this);
-    _this.admin = true;
-    return _this;
-  }
-
-  return Admin;
-}(User);
-
-var user = new User("usermail", "pass1");
-var admin = new Admin("adminmail", "pass2");
-console.log(user.isAdmin());
-console.log(admin.isAdmin()); // 2
-
-var users = [{
-  name: "Diego",
-  age: 23,
-  company: "Rocketseat"
-}, {
-  name: "Gabriel",
-  age: 15,
-  empresa: "Rocketseat"
-}, {
-  name: "Lucas",
-  age: 30,
-  company: "Facebook"
-}, {
-  name: "Luis",
-  age: 24,
-  company: "Google"
-}]; // 2.1
-
-var ages = users.map(function (user) {
-  return user.age;
-});
-console.log(ages); // 2.2
-
-var filteredUsers = users.filter(function (user) {
-  return user.age > 18 && user.company === "Rocketseat";
-});
-console.log(filteredUsers); // 2.3
-
-var googlers = users.find(function (user) {
-  return user.company === "Google";
-});
-console.log(googlers); // 2.4
-
-var belowFifty = users.filter(function (item) {
-  return item.age * 2 <= 50;
-});
-console.log(belowFifty); // 3
-// 3.1
-
-var arr = [1, 2, 3, 4, 5];
-arr.map(function (item) {
-  return item + 10;
-});
-console.log(arr); // 3.2
-
-var user2 = {
-  name: "Diego",
-  age: 23
-};
-
-var showAge = function showAge(user) {
-  return user.age;
-};
-
-console.log(showAge(user2)); // 3.3
-
-var name = "Diego";
-var age = 23;
-
-var showUser = function showUser() {
-  var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "Diego";
-  var age = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 18;
-  return {
-    //important
-    name: name,
-    age: age
-  };
-};
-
-console.log(showUser(name, age));
-console.log(showUser(name)); // 3.4
-
-var promise = function promise() {
-  return new Promise(function (resolve, reject) {
-    return resolve();
-  });
-}; // 4
-// 4.1
-
-
-var company = {
-  companyName: "Rocketseat",
-  address: {
-    city: "Rio do Sul",
-    state: "SC"
-  }
-};
-var companyName = company.companyName,
-    _company$address = company.address,
-    city = _company$address.city,
-    state = _company$address.state;
-console.log(companyName);
-console.log(city);
-console.log(state); // 4.2
-
-function showInfo() {
-  return "".concat(name, " tem ").concat(age, " anos.");
-}
-
-console.log(showInfo({
-  name: "Diego",
-  age: 23
-})); // 5
-// 5.1 - 1
-
-var arrFive = [1, 2, 3, 4, 5, 6];
-var x = arrFive[0],
-    y = arrFive.slice(1);
-console.log(x);
-console.log(y); // 5.1 - 2
-
-var sumRest = function sumRest() {
-  for (var _len = arguments.length, arr = new Array(_len), _key = 0; _key < _len; _key++) {
-    arr[_key] = arguments[_key];
-  }
-
-  return arr.reduce(function (total, next) {
-    return total + next;
-  });
-};
-
-console.log(sumRest(1, 2, 3));
-console.log(sumRest(1, 1, 2, 3, 4, 5)); // 5.2
-
-var userSpread = {
-  name: "Diego",
-  age: 23,
-  address: {
-    city: "Rio do Sul",
-    state: "SC",
-    country: "Brasil"
-  }
-};
-
-var userSpread2 = _objectSpread(_objectSpread({}, userSpread), {}, {
-  name: "Gabriel"
-}); // order matters
-
-
-var userSpread3 = _objectSpread(_objectSpread({}, userSpread), {}, {
-  address: _objectSpread(_objectSpread({}, userSpread.address), {}, {
-    city: "Lontras"
-  }) // important
-
-});
-
-console.log(userSpread2);
-console.log(userSpread3); // 6
-
-var userTL = "Diego";
-var ageTL = 23;
-console.log("O usu\xE1rio ".concat(userTL, " possui ").concat(ageTL, " anos")); // 7
-
-var nameO = "Diego";
-var ageO = 23;
-var userO = {
-  nameO: nameO,
-  ageO: ageO,
-  city: "Rio do Sul"
-};
-console.log(userO);
+/******/ });
