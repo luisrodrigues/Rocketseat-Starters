@@ -40,13 +40,50 @@ class Api {
       const response = await axios.get(
         `https://api.github.com/users/${username}`
       );
-      console.log(response);
+      console.log(response.data);
     } catch (err) {
       console.warn(err);
     }
   }
 }
-// 200
+
+const findUser = async (username) => {
+  try {
+    const response = await axios.get(
+      `https://api.github.com/users/${username}`
+    );
+    console.log(response.data);
+  } catch (err) {
+    console.warn(err);
+  }
+};
+
 Api.getUserInfo("luisrodrigues");
-// 404
-Api.getUserInfo("luisrodriguesssss");
+findUser("luisrodrigues");
+
+// Challenge
+const delay = () => new Promise((resolve) => setTimeout(resolve, 1000));
+const onePerSecond = async () => {
+  await delay();
+  console.log("1s");
+  await delay();
+  console.log("2s");
+  await delay();
+  console.log("3s");
+};
+onePerSecond();
+
+class Github {
+  static async getRepos(username) {
+    try {
+      const response = await axios.get(
+        `https://api.github.com/users/${username}/repos`
+      );
+      response.data.map((item) => console.log(item.name));
+    } catch (err) {
+      console.warn(err);
+    }
+  }
+}
+
+Github.getRepos("luisrodrigues");
