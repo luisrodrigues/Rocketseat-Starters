@@ -15,6 +15,17 @@ class App {
     this.formEl.onsubmit = (event) => this.addRepository(event);
   }
 
+  setLoading(loading = true) {
+    if (loading) {
+      let loadingEl = document.createElement("span");
+      loadingEl.appendChild(document.createTextNode("Loading..."));
+      loadingEl.setAttribute("id", "loading");
+      this.formEl.appendChild(loadingEl);
+    } else {
+      document.getElementById("loading").remove();
+    }
+  }
+
   async addRepository(event) {
     // stops page from reloading after submission
     event.preventDefault();
@@ -22,23 +33,32 @@ class App {
     const repoInput = this.inputEl.value;
     if (repoInput.length === 0) return;
 
-    const response = await api.get(`/repos/${repoInput}`);
+    this.setLoading();
 
-    const {
-      name,
-      description,
-      owner: { avatar_url },
-      html_url,
-    } = response.data;
+    try {
+      const response = await api.get(`/repos/${repoInput}`);
+      const {
+        name,
+        description,
+        owner: { avatar_url },
+        html_url,
+      } = response.data;
 
-    this.repositories.push({
-      name,
-      description,
-      avatar_url,
-      html_url,
-    });
-    this.inputEl.value = "";
-    this.render();
+      this.repositories.push({
+        name,
+        description,
+        avatar_url,
+        html_url,
+      });
+      this.inputEl.value = "";
+      this.render();
+    } catch (err) {
+      console.warn(err);
+      alert("Repo does not exist!");
+      this.inputEl.value = "";
+    }
+
+    this.setLoading(false);
   }
 
   render() {
