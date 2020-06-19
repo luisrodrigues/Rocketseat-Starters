@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 // base route
 app.get("/", (req, res) => {
-  res.send("hello");
+  res.send("hello bro");
 });
 // start server on port
 app.listen(3001);
