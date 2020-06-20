@@ -14,19 +14,7 @@ mongoose.connect("mongodb://localhost:27017/nodeapi", {
 });
 requireDir("./src/models");
 
-//test
-const Product = mongoose.model("Product");
-
-// base route
-app.get("/", (req, res) => {
-  // test
-  Product.create({
-    title: "React",
-    description: "frontend framework",
-    url: "https://reactjs.org/",
-  });
-
-  return res.send("hello bro");
-});
+// routes
+app.use("/api", require("./src/routes"));
 // start server on port
 app.listen(3001);
