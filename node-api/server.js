@@ -7,6 +7,7 @@ const requireDir = require("require-dir");
 
 // initializing express
 const app = express();
+app.use(express.json());
 // DB
 mongoose.connect("mongodb://localhost:27017/nodeapi", {
   useNewUrlParser: true,
