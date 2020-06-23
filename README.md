@@ -8,7 +8,7 @@ Progress (w/ final projects):
 - [x] ES6 (Modern JS)
 - [x] NodeJS
 - [x] ReactJS
-      ![huntweb-screenshot1](./prints/huntweb1.PNG =200x)
-      ![huntweb-screenshot2](./prints/huntweb2.PNG =200x)
-      ![huntweb-screenshot3](./prints/huntweb3.PNG =200x)
+      ![huntweb-screenshot1](./prints/huntweb1.PNG)
+      ![huntweb-screenshot2](./prints/huntweb2.PNG)
+      ![huntweb-screenshot3](./prints/huntweb3.PNG)
 - [ ] React Native
