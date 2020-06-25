@@ -9,6 +9,4 @@ Progress (w/ final projects):
 - [x] NodeJS
 - [x] ReactJS
       ![huntweb-screenshot1](./prints/huntweb1.PNG)
-      ![huntweb-screenshot2](./prints/huntweb2.PNG)
-      ![huntweb-screenshot3](./prints/huntweb3.PNG)
 - [ ] React Native
